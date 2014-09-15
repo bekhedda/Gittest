@@ -1,26 +1,713 @@
 <?xml version="1.0"?>
 
 
-<!DOCTYPE Ontology [
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
 ]>
 
 
-<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+<rdf:RDF xmlns="https://github.com/bekhedda/Gittest/ontologie.owl#"
      xml:base="https://github.com/bekhedda/Gittest/ontologie.owl"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     ontologyIRI="https://github.com/bekhedda/Gittest/ontologie.owl">
-    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
-    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
-    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
-</Ontology>
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#Enseigner -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#Enseigner">
+        <rdfs:range rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Module"/>
+        <rdfs:domain rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Professeur"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#Etudier -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#Etudier">
+        <rdfs:domain rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Etudiant"/>
+        <rdfs:range rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Module"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#E-mail -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#E-mail">
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Personnage"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#ID_Etudiant -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#ID_Etudiant">
+        <rdfs:range rdf:resource="&xsd;integer"/>
+        <rdfs:domain rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Etudiant"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#ID_Professeur -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#ID_Professeur">
+        <rdfs:range rdf:resource="&xsd;integer"/>
+        <rdfs:domain rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Professeur"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#Nom -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#Nom">
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Personnage"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#Prénom -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#Prénom">
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Personnage"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#Etudiant -->
+
+    <owl:Class rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#Etudiant">
+        <rdfs:subClassOf rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Personnage"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#Master_1 -->
+
+    <owl:Class rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#Master_1">
+        <rdfs:subClassOf rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Module"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#Master_2 -->
+
+    <owl:Class rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#Master_2">
+        <rdfs:subClassOf rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Module"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#Module -->
+
+    <owl:Class rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#Module"/>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#Personnage -->
+
+    <owl:Class rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#Personnage"/>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#Professeur -->
+
+    <owl:Class rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#Professeur">
+        <rdfs:subClassOf rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Personnage"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#B105_Programmation_mathématique_et_optimisation -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#B105_Programmation_mathématique_et_optimisation">
+        <rdf:type rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Master_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#B222_Bases_de_télécommunications -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#B222_Bases_de_télécommunications">
+        <rdf:type rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Master_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#B303_Gestion_de_projets -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#B303_Gestion_de_projets">
+        <rdf:type rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Master_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#B509_Etudes_et_recherches -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#B509_Etudes_et_recherches">
+        <rdf:type rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Master_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#C106_Analyse_et_fouille_des_données -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#C106_Analyse_et_fouille_des_données">
+        <rdf:type rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Master_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#C107_Processus_stochastiques -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#C107_Processus_stochastiques">
+        <rdf:type rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Master_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#C214_Réseaux_et_protocoles -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#C214_Réseaux_et_protocoles">
+        <rdf:type rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Master_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#C215_Bases_de_données_avancées -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#C215_Bases_de_données_avancées">
+        <rdf:type rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Master_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#C216_Architecture_client-serveur -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#C216_Architecture_client-serveur">
+        <rdf:type rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Master_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#C217_Intélligence_artificielle -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#C217_Intélligence_artificielle">
+        <rdf:type rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Master_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#C305_Méthodes_orientées_objet_de_conception -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#C305_Méthodes_orientées_objet_de_conception">
+        <rdf:type rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Master_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#C307 -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#C307">
+        <rdf:type rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Master_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#C308_Projet_de_conception_orienté_objet -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#C308_Projet_de_conception_orienté_objet">
+        <rdf:type rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Master_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#C409_Gestion_financière_et_contrôle_de_gestion -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#C409_Gestion_financière_et_contrôle_de_gestion">
+        <rdf:type rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Master_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#C507_Anglais_2 -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#C507_Anglais_2">
+        <rdf:type rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Master_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#D111 -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#D111">
+        <rdf:type rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Master_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#D112_Théorie_des_jeux -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#D112_Théorie_des_jeux">
+        <rdf:type rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Master_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#D219_Technologies_récentes_des_réseaux -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#D219_Technologies_récentes_des_réseaux">
+        <rdf:type rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Master_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#D232_Analyse_multidimensionnelle_et_datamining -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#D232_Analyse_multidimensionnelle_et_datamining">
+        <rdf:type rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Master_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#D310_Ingénierie_et_gestion_des_connaissances -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#D310_Ingénierie_et_gestion_des_connaissances">
+        <rdf:type rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Master_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#D314_Ingénierie_des_systèmes_à_base_de_services -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#D314_Ingénierie_des_systèmes_à_base_de_services">
+        <rdf:type rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Master_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#D412_Gestion_stratégique_des_organisations -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#D412_Gestion_stratégique_des_organisations">
+        <rdf:type rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Master_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#D512_Anglais_3 -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#D512_Anglais_3">
+        <rdf:type rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Master_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#D605 -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#D605">
+        <rdf:type rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Master_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#D607_Stage -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#D607_Stage">
+        <rdf:type rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Master_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#Etudiante_1 -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#Etudiante_1">
+        <rdf:type rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Etudiant"/>
+        <ID_Etudiant rdf:datatype="&xsd;integer">001</ID_Etudiant>
+        <Nom rdf:datatype="&xsd;string">Bekhedda</Nom>
+        <Prénom rdf:datatype="&xsd;string">Zana</Prénom>
+        <E-mail rdf:datatype="&xsd;string">bekhedda_zana@hotmail.com</E-mail>
+        <Etudier rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#B303_Gestion_de_projets"/>
+        <Etudier rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#C107_Processus_stochastiques"/>
+        <Etudier rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#C215_Bases_de_données_avancées"/>
+        <Etudier rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#C305_Méthodes_orientées_objet_de_conception"/>
+        <Etudier rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#C307"/>
+        <Etudier rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#C308_Projet_de_conception_orienté_objet"/>
+        <Etudier rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#C409_Gestion_financière_et_contrôle_de_gestion"/>
+        <Etudier rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#C507_Anglais_2"/>
+        <Etudier rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#D111"/>
+        <Etudier rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#D112_Théorie_des_jeux"/>
+        <Etudier rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#D219_Technologies_récentes_des_réseaux"/>
+        <Etudier rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#D232_Analyse_multidimensionnelle_et_datamining"/>
+        <Etudier rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#D310_Ingénierie_et_gestion_des_connaissances"/>
+        <Etudier rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#D314_Ingénierie_des_systèmes_à_base_de_services"/>
+        <Etudier rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#D412_Gestion_stratégique_des_organisations"/>
+        <Etudier rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#D512_Anglais_3"/>
+        <Etudier rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#D605"/>
+        <Etudier rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#D607_Stage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#Prof1 -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#Prof1">
+        <rdf:type rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Professeur"/>
+        <ID_Professeur rdf:datatype="&xsd;integer">0001</ID_Professeur>
+        <Nom rdf:datatype="&xsd;string">Cochard</Nom>
+        <Prénom rdf:datatype="&xsd;string">Gérard Michel</Prénom>
+        <E-mail rdf:datatype="&xsd;string">cochard@u-picardie.fr</E-mail>
+        <Enseigner rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#B222_Bases_de_télécommunications"/>
+        <Enseigner rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#B303_Gestion_de_projets"/>
+        <Enseigner rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#B509_Etudes_et_recherches"/>
+        <Enseigner rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#C106_Analyse_et_fouille_des_données"/>
+        <Enseigner rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#C107_Processus_stochastiques"/>
+        <Enseigner rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#C214_Réseaux_et_protocoles"/>
+        <Enseigner rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#C215_Bases_de_données_avancées"/>
+        <Enseigner rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#C307"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#Prof10 -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#Prof10">
+        <rdf:type rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Professeur"/>
+        <ID_Professeur rdf:datatype="&xsd;integer">0010</ID_Professeur>
+        <Nom rdf:datatype="&xsd;string">Jibril</Nom>
+        <Prénom rdf:datatype="&xsd;string">Touzi Koumtouzoua</Prénom>
+        <E-mail rdf:datatype="&xsd;string">touzi_jibril@yahoo.fr</E-mail>
+        <Enseigner rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#C215_Bases_de_données_avancées"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#Prof11 -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#Prof11">
+        <rdf:type rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Professeur"/>
+        <ID_Professeur rdf:datatype="&xsd;integer">0011</ID_Professeur>
+        <Prénom rdf:datatype="&xsd;string">Mohamed</Prénom>
+        <Nom rdf:datatype="&xsd;string">Sidir</Nom>
+        <E-mail rdf:datatype="&xsd;string">sidir@u-picardie.fr</E-mail>
+        <Enseigner rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#C216_Architecture_client-serveur"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#Prof12 -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#Prof12">
+        <rdf:type rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Professeur"/>
+        <ID_Professeur rdf:datatype="&xsd;integer">0012</ID_Professeur>
+        <Nom rdf:datatype="&xsd;string">Fouet</Nom>
+        <Prénom rdf:datatype="&xsd;string">Jean Marc</Prénom>
+        <Enseigner rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#C217_Intélligence_artificielle"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#Prof13 -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#Prof13">
+        <rdf:type rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Professeur"/>
+        <ID_Professeur rdf:datatype="&xsd;integer">0013</ID_Professeur>
+        <Prénom rdf:datatype="&xsd;string">Dominique</Prénom>
+        <Nom rdf:datatype="&xsd;string">Leclet</Nom>
+        <E-mail rdf:datatype="&xsd;string">dominique.leclet@u-picardie.fr</E-mail>
+        <Enseigner rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#C305_Méthodes_orientées_objet_de_conception"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#Prof14 -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#Prof14">
+        <rdf:type rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Professeur"/>
+        <ID_Professeur rdf:datatype="&xsd;integer">0014</ID_Professeur>
+        <Prénom rdf:datatype="&xsd;string">Alain</Prénom>
+        <E-mail rdf:datatype="&xsd;string">Alain.Vailly@univ-nantes.fr</E-mail>
+        <Nom rdf:datatype="&xsd;string">Vailly</Nom>
+        <Enseigner rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#C308_Projet_de_conception_orienté_objet"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#Prof15 -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#Prof15">
+        <rdf:type rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Professeur"/>
+        <ID_Professeur rdf:datatype="&xsd;integer">0015</ID_Professeur>
+        <E-mail rdf:datatype="&xsd;string">Bedupe@aol.com</E-mail>
+        <Prénom rdf:datatype="&xsd;string">Bernard</Prénom>
+        <Nom rdf:datatype="&xsd;string">Dupe</Nom>
+        <Enseigner rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#C409_Gestion_financière_et_contrôle_de_gestion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#Prof16 -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#Prof16">
+        <rdf:type rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Professeur"/>
+        <ID_Professeur rdf:datatype="&xsd;integer">0016</ID_Professeur>
+        <Prénom rdf:datatype="&xsd;string">Claude</Prénom>
+        <Nom rdf:datatype="&xsd;string">James</Nom>
+        <E-mail rdf:datatype="&xsd;string">claude.james@infonie.fr</E-mail>
+        <Enseigner rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#C507_Anglais_2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#Prof17 -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#Prof17">
+        <rdf:type rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Professeur"/>
+        <ID_Professeur rdf:datatype="&xsd;integer">0017</ID_Professeur>
+        <Nom rdf:datatype="&xsd;string">Maabout</Nom>
+        <Prénom rdf:datatype="&xsd;string">Sofian</Prénom>
+        <E-mail rdf:datatype="&xsd;string">sofian.maabout@labri.fr</E-mail>
+        <Enseigner rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#D111"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#Prof18 -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#Prof18">
+        <rdf:type rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Professeur"/>
+        <ID_Professeur rdf:datatype="&xsd;integer">0018</ID_Professeur>
+        <Nom rdf:datatype="&xsd;string">EGEA</Nom>
+        <Prénom rdf:datatype="&xsd;string">Marcel</Prénom>
+        <E-mail rdf:datatype="&xsd;string">marcel.egea@univ-lyon1.fr</E-mail>
+        <Enseigner rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#D112_Théorie_des_jeux"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#Prof19 -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#Prof19">
+        <rdf:type rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Professeur"/>
+        <ID_Professeur rdf:datatype="&xsd;integer">0019</ID_Professeur>
+        <Nom rdf:datatype="&xsd;string">Hacid</Nom>
+        <Prénom rdf:datatype="&xsd;string">Mohand Said</Prénom>
+        <E-mail rdf:datatype="&xsd;string">Mohand-Said.hacid@univ-lyon1.fr</E-mail>
+        <Enseigner rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#D232_Analyse_multidimensionnelle_et_datamining"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#Prof2 -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#Prof2">
+        <rdf:type rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Professeur"/>
+        <ID_Professeur rdf:datatype="&xsd;integer">0002</ID_Professeur>
+        <Nom rdf:datatype="&xsd;string">Gollotte</Nom>
+        <Prénom rdf:datatype="&xsd;string">Philippe</Prénom>
+        <Enseigner rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#B105_Programmation_mathématique_et_optimisation"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#Prof20 -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#Prof20">
+        <rdf:type rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Professeur"/>
+        <ID_Professeur rdf:datatype="&xsd;integer">0020</ID_Professeur>
+        <Prénom rdf:datatype="&xsd;string">Alain</Prénom>
+        <E-mail rdf:datatype="&xsd;string">Alain.Mille@liris.cnrs.fr</E-mail>
+        <Nom rdf:datatype="&xsd;string">Mille</Nom>
+        <Enseigner rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#D310_Ingénierie_et_gestion_des_connaissances"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#Prof21 -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#Prof21">
+        <rdf:type rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Professeur"/>
+        <ID_Professeur rdf:datatype="&xsd;integer">0021</ID_Professeur>
+        <Nom rdf:datatype="&xsd;string">Cocula</Nom>
+        <Prénom rdf:datatype="&xsd;string">François</Prénom>
+        <Enseigner rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#D412_Gestion_stratégique_des_organisations"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#Prof22 -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#Prof22">
+        <rdf:type rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Professeur"/>
+        <ID_Professeur rdf:datatype="&xsd;integer">0022</ID_Professeur>
+        <Prénom rdf:datatype="&xsd;string">Christian</Prénom>
+        <Nom rdf:datatype="&xsd;string">Val</Nom>
+        <Enseigner rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#D605"/>
+        <Enseigner rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#D607_Stage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#Prof3 -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#Prof3">
+        <rdf:type rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Professeur"/>
+        <ID_Professeur rdf:datatype="&xsd;integer">0003</ID_Professeur>
+        <Nom rdf:datatype="&xsd;string">Berera</Nom>
+        <Prénom rdf:datatype="&xsd;string">Edoardo</Prénom>
+        <E-mail rdf:datatype="&xsd;string">berera@unice.fr</E-mail>
+        <Enseigner rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#B222_Bases_de_télécommunications"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#Prof4 -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#Prof4">
+        <rdf:type rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Professeur"/>
+        <ID_Professeur rdf:datatype="&xsd;integer">0004</ID_Professeur>
+        <Nom rdf:datatype="&xsd;string">Besson</Nom>
+        <Prénom rdf:datatype="&xsd;string">Michel</Prénom>
+        <E-mail rdf:datatype="&xsd;string">besson@.fr</E-mail>
+        <Enseigner rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#C214_Réseaux_et_protocoles"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#Prof5 -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#Prof5">
+        <rdf:type rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Professeur"/>
+        <ID_Professeur rdf:datatype="&xsd;integer">0005</ID_Professeur>
+        <Prénom rdf:datatype="&xsd;string">Jeandel</Prénom>
+        <Nom rdf:datatype="&xsd;string">Thierry</Nom>
+        <E-mail rdf:datatype="&xsd;string">jeandel@univ-nancy2.fr</E-mail>
+        <Enseigner rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#C214_Réseaux_et_protocoles"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#Prof6 -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#Prof6">
+        <rdf:type rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Professeur"/>
+        <ID_Professeur rdf:datatype="&xsd;integer">0006</ID_Professeur>
+        <Prénom rdf:datatype="&xsd;string">Desprats</Prénom>
+        <Nom rdf:datatype="&xsd;string">Thierry</Nom>
+        <E-mail rdf:datatype="&xsd;string">desprats@irit.fr</E-mail>
+        <Enseigner rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#C214_Réseaux_et_protocoles"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#Prof7 -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#Prof7">
+        <rdf:type rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Professeur"/>
+        <ID_Professeur rdf:datatype="&xsd;integer">0007</ID_Professeur>
+        <Prénom rdf:datatype="&xsd;string">Angélique</Prénom>
+        <Nom rdf:datatype="&xsd;string">Saget</Nom>
+        <E-mail rdf:datatype="&xsd;string">a_Saget@yahoo.fr</E-mail>
+        <Enseigner rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#C215_Bases_de_données_avancées"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#Prof8 -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#Prof8">
+        <rdf:type rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Professeur"/>
+        <ID_Professeur rdf:datatype="&xsd;integer">0008</ID_Professeur>
+        <Prénom rdf:datatype="&xsd;string">Adam</Prénom>
+        <Nom rdf:datatype="&xsd;string">Jérome</Nom>
+        <E-mail rdf:datatype="&xsd;string">jerom_adam@yahoo.fr</E-mail>
+        <Enseigner rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#C215_Bases_de_données_avancées"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/bekhedda/Gittest/ontologie.owl#Prof9 -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#Prof9">
+        <rdf:type rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#Professeur"/>
+        <ID_Professeur rdf:datatype="&xsd;integer">0009</ID_Professeur>
+        <Nom rdf:datatype="&xsd;string">Belot</Nom>
+        <Prénom rdf:datatype="&xsd;string">Claude</Prénom>
+        <E-mail rdf:datatype="&xsd;string">belocla@yahoo.fr</E-mail>
+        <Enseigner rdf:resource="https://github.com/bekhedda/Gittest/ontologie.owl#C215_Bases_de_données_avancées"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#Etudiant"/>
+            <rdf:Description rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#Master_1"/>
+            <rdf:Description rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#Master_2"/>
+            <rdf:Description rdf:about="https://github.com/bekhedda/Gittest/ontologie.owl#Professeur"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
 
 
 
